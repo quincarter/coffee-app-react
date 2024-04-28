@@ -7,3 +7,13 @@
 .not-found > .dotlottie-container.main {
   width: 30rem;
 }
+
+.loading-container {
+  height: calc(100vh - 1rem);
+  display: grid;
+  place-content: center;
+}
+
+.loading-container h3 {
+  text-align: center;
+}

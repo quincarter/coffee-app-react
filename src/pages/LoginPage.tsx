@@ -1,32 +1,35 @@
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Paper from "@mui/material/Paper";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import CssBaseline from "@mui/material/CssBaseline";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import Paper from "@mui/material/Paper";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth, ICredentials } from "../utils/AuthContext";
-import Copyright from "../components/Copyright";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { WALLPAPER_THEME } from "../app-constants";
+import Copyright from "../components/Copyright";
+import { ICredentials, useAuth } from "../utils/AuthContext";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
 export default function SignInSide() {
-  const { user, handleUserLogin } = useAuth();
+  const { user, handleUserLogin, errors } = useAuth();
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState<ICredentials>({
     email: "",
     password: "",
   });
+
+  const lottieStyles = {
+    height: "10rem",
+  };
 
   useEffect(() => {
     if (user) {
@@ -79,9 +82,14 @@ export default function SignInSide() {
               alignItems: "center",
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            {/* <BrewMeLogo /> */}
+            <DotLottieReact
+              style={lottieStyles}
+              autoResizeCanvas
+              loop
+              autoplay
+              src="https://lottie.host/97cffe08-0f93-48d2-8c04-76cca5a863ee/rBeYF4yeqV.lottie"
+            />
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
@@ -91,6 +99,10 @@ export default function SignInSide() {
               onSubmit={(e) => handleUserLogin(e, credentials)}
               sx={{ mt: 1 }}
             >
+              {errors.length > 0 &&
+                errors.map((error: string) => (
+                  <Alert severity="error">{error}</Alert>
+                ))}
               <TextField
                 margin="normal"
                 required

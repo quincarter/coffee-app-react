@@ -6,16 +6,18 @@ import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import RegisterPage from "./pages/RegisterPage";
 
-import { AuthProvider } from "./utils/AuthContext";
-import RegisterPageMaterial from "./pages/RegisterPageMaterial";
+import { AuthProvider, useAuth } from "./utils/AuthContext";
+import { GlobalNotification } from "./components/GlobalNotification";
 function App() {
+  const { globalNotification } = useAuth();
+
   return (
     <Router>
       <AuthProvider>
         <Routes>
           <Route path="*" element={<NotFound />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPageMaterial />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route element={<PrivateRoutes />}>
             <Route path="/" element={<Dashboard />} />
           </Route>

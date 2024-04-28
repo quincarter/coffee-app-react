@@ -1,5 +1,29 @@
 {
-  "name": "starter-app-change-me",
+  "name": "brew-me",
+  "shortName": "BrewMe",
+  "description": "Coffee app for Coffee Nerds that like to know all the measurements of their brews.",
+  "keywords": [
+    "Brew",
+    "Me",
+    "BrewMe",
+    "Coffee",
+    "Calculate",
+    "Calculator",
+    "Chemex",
+    "Pour Over",
+    "French Press",
+    "Aeropress",
+    "Espresso",
+    "Cold Brew",
+    "Roast",
+    "Coffee Roasting",
+    "Roasting",
+    "Brewing",
+    "Coffee Cup",
+    "Coffee Mug",
+    "V60"
+  ],
+  "theme_color": "#1976d2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,14 +34,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@dotlottie/react-player": "^1.6.19",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@fontsource/roboto": "^5.0.13",
+    "@lottiefiles/dotlottie-react": "^0.5.4",
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "appwrite": "^14.0.1",
+    "libphonenumber-js": "^1.10.61",
+    "material-ui-phone-number": "^3.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.0",
@@ -33,6 +59,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10"
+    "vite": "^5.2.10",
+    "vite-plugin-pwa": "^0.19.8"
   }
 }
