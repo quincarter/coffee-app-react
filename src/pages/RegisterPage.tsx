@@ -13,14 +13,14 @@ import Copyright from "../components/Copyright";
 import { IRegistrationCredentials, useAuth } from "../utils/AuthContext";
 import Alert from "@mui/material/Alert";
 import MuiPhoneNumber from "material-ui-phone-number";
-import {
-  parsePhoneNumber,
-  isValidPhoneNumber,
-  getNumberType,
-  validatePhoneNumberLength,
-} from "libphonenumber-js";
-import parseMax from "libphonenumber-js/max";
-import { FormControl, Input } from "@mui/material";
+// import {
+//   parsePhoneNumber,
+//   isValidPhoneNumber,
+//   getNumberType,
+//   validatePhoneNumberLength,
+// } from "libphonenumber-js";
+// import parseMax from "libphonenumber-js/max";
+// import { FormControl, Input } from "@mui/material";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();

@@ -13,18 +13,18 @@ export default defineConfig({
         enabled: true,
       },
       manifest: {
-        name: JSON.stringify(packageJson.name),
-        short_name: JSON.stringify(packageJson.shortName),
-        description: JSON.stringify(packageJson.description),
-        theme_color: JSON.stringify(packageJson.theme_color),
+        name: packageJson.shortName,
+        short_name: packageJson.shortName,
+        description: packageJson.description,
+        theme_color: packageJson.theme_color,
         icons: [
           {
-            src: "assets/icons/icon-192x192.png",
+            src: "/icons/icon-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "assets/icons/icon-512x512.png",
+            src: "/icons/icon-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },

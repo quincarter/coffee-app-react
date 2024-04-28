@@ -1,16 +1,13 @@
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoutes from "./components/PrivateRoutes";
 import Dashboard from "./pages/Dashboard";
 import LoginPage from "./pages/LoginPage";
 import NotFound from "./pages/NotFound";
 import RegisterPage from "./pages/RegisterPage";
 
-import { AuthProvider, useAuth } from "./utils/AuthContext";
-import { GlobalNotification } from "./components/GlobalNotification";
+import { AuthProvider } from "./utils/AuthContext";
 function App() {
-  const { globalNotification } = useAuth();
-
   return (
     <Router>
       <AuthProvider>

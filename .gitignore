@@ -27,4 +27,4 @@ dist-ssr
 .history
 
 ## Appwrite
-appwrite/
+appwrite/.env
